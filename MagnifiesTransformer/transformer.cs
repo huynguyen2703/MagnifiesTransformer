@@ -116,10 +116,8 @@ public class Transformer
 
     // properties section
     public uint GetNumQueries => NumQueries;
-
     public uint GetHighData => HighData;
     public uint GetLowData => LowData;
-
     public bool GetInitialState => InitialState;
     public bool IsTargetKnown => TargetKnown;
     
@@ -245,6 +243,7 @@ public class Transformer
         }
     }
 
+    
     public void ShutDown()
     {
         if (GetType() != typeof(TMagnifier))
@@ -252,6 +251,7 @@ public class Transformer
             CurrentState = State.ShutDown;
         }
     }
+    
     
     /// PRECONDITIONS : An object must not be in shut down mode or inactive mode. <para></para>
     /// POSTCONDITIONS : No exception is thrown

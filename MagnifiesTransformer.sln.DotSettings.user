@@ -1,0 +1,27 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=21ea415d_002D484a_002D456c_002Dac2a_002Db7779d97e2e4/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TestSuccessfulCreateMagnifier" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::57E720C2-C103-4495-A9A3-BD2481868B32::net8.0::MagnifierTransformer.MagnifierTest+MagnifierUnitTest.TestSuccessfulCreateMagnifier&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::57E720C2-C103-4495-A9A3-BD2481868B32::net8.0::MagnifierTransformer.MagnifierTest+MagnifierUnitTest.TestFailCreateMagnifier&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::57E720C2-C103-4495-A9A3-BD2481868B32::net8.0::MagnifierTransformer.MagnifierTest+MagnifierUnitTest.TesSuccessfulYieldSize&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::57E720C2-C103-4495-A9A3-BD2481868B32::net8.0::MagnifierTransformer.MagnifierTest+MagnifierUnitTest.TestFailYieldSize&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=97d783ac_002D45a5_002D4f6f_002Da4af_002De2df3efdb376/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TestFailYieldSize" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::57E720C2-C103-4495-A9A3-BD2481868B32::net8.0::MagnifierTransformer.MagnifierTest+MagnifierUnitTest&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b64b4083_002Dc897_002D4252_002Da081_002D58e241a19b1a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GateCheckSuccessful" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::57E720C2-C103-4495-A9A3-BD2481868B32::net8.0::MagnifierTransformer.MagnifierTest+MagnifierUnitTest&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=fbbb12ea_002D7695_002D4622_002Da7f2_002Ddb8f33c409cb/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TestToggle" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::57E720C2-C103-4495-A9A3-BD2481868B32::net8.0::MagnifierTransformer.MagnifierTest+MagnifierUnitTest.TestToggle&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::57E720C2-C103-4495-A9A3-BD2481868B32::net8.0::MagnifierTransformer.MagnifierTest+MagnifierUnitTest.TestShutDownSuccessful&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::57E720C2-C103-4495-A9A3-BD2481868B32::net8.0::MagnifierTransformer.MagnifierTest+MagnifierUnitTest.TestFailShutDown&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::57E720C2-C103-4495-A9A3-BD2481868B32::net8.0::MagnifierTransformer.MagnifierTest+MagnifierUnitTest.GateCheckSuccessful&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

@@ -3,7 +3,7 @@ namespace MagnifiesTransformer;
 public interface IMagnifier
 {
     // Properties to get data (getters)
-    public int Size { get; }
+    public uint Size { get; }
     
     public double ScaleFactor { get; }
     

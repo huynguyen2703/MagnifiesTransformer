@@ -7,7 +7,6 @@ public class TMagnifier : Magnifier
     
     // properties section
 
-    public uint TMagnifierGetNumQueries => _transformer.GetNumQueries;
     public uint TMagnifierGetHighData => _transformer.GetHighData;
     public uint TMagnifierGetLowData => _transformer.GetLowData;
     public bool IsTargetKnown => _transformer.IsTargetKnown;
@@ -15,13 +14,12 @@ public class TMagnifier : Magnifier
     public bool TMagnifierDifference => _transformer.IsDifference;
     public bool TMagnifierProduct => _transformer.IsProduct;
     public bool TMagnifierModulo => _transformer.IsModulo;
-
     public bool TMagnifierUnknown => _transformer.IsUnknown;
     public Transformer.OperationType TMagnifierOperationType => _transformer.GetOperationType;
     
     
     // methods section
-    public TMagnifier(int size, double scaleFactor, uint limit, uint maxYield, Transformer transformer) :
+    public TMagnifier(uint size, double scaleFactor, uint limit, uint maxYield, Transformer transformer) :
         base(size, scaleFactor, limit, maxYield)
     { 
         _transformer = transformer;
@@ -49,19 +47,16 @@ public class TMagnifier : Magnifier
 
         return returnVal;
     }
-
     public void  TMagnifierReset()
     {
         _transformer.Reset();
         Reset(); // magnifier version
     }
-
     public void TMagnifierActivate()
     {
         _transformer.Activate();
         Activate(); // magnifier version
     }
-
     public void TMagnifierDeactivate()
     {
         _transformer.Deactivate();
@@ -92,7 +87,5 @@ public class TMagnifier : Magnifier
     
 }
 
-
-// TODO : BUILD DRIVER (keep build driver)
-// TODO : START CODING P3 3500
+// TODO : WATCH NEW VIDEO FOR MONDAY
 // TODO : STUDY TURING MACHINE

@@ -3,7 +3,8 @@ namespace MagnifiesTransformer;
 public class Magnifier : IMagnifier
 {
     // data section
-    private readonly int _size;
+    private readonly uint _size;
+    private double _yieldedSize;
     private readonly double _scaleFactor;
     private readonly uint _limit;
     private uint _maxYield;
@@ -28,29 +29,29 @@ public class Magnifier : IMagnifier
     }
 
     // properties section
-    public int Size => _size;
-    public double ScaleFactor => _scaleFactor;
+    public uint Size => _size;
+    public double ScaleFactor => Math.Round(_scaleFactor, 2); // 2 decimal places
     public uint Limit => _limit;
     public uint MaxYield => _maxYield;
     public uint NumQueries => _numQueries;
     public bool GetInitialState => _initialState;
+    public uint GetInitialYield => _extraMaxYield;
     public State GetState => CurrentState;
     public ScaleDirection GetDirection => Direction;
     public bool IsActive => CurrentState == State.Active;
     public bool IsInactive => CurrentState == State.Inactive;
     public bool IsShutDown => CurrentState == State.ShutDown;
     public bool IsUp => Direction == ScaleDirection.Up;
-
     public bool IsDown => Direction == ScaleDirection.Down;
-
     public bool IsUnknown => Direction == ScaleDirection.Unknown;
 
 
     // methods section
-    public Magnifier(int size, double scaleFactor, uint limit, uint maxYield)
+    public Magnifier(uint  size, double scaleFactor, uint limit, uint maxYield)
     {
-        GateCheck(size);
+        GateCheck(scaleFactor);
         _size = size;
+        _yieldedSize = _size;
         _scaleFactor = scaleFactor;
         _limit = limit;
         _maxYield = maxYield;
@@ -65,16 +66,21 @@ public class Magnifier : IMagnifier
     {
         PreCheck();
         ToggleDirection();
+        const int decimalPlaces = 2;
         _maxYield -= 1;
         _numQueries += 1;
         ShutDown();
         _initialState = false;
         if (IsUp)
         {
-            return _size * _scaleFactor;
+            _yieldedSize *= _scaleFactor;
+        }
+        else
+        {
+            _yieldedSize /= _scaleFactor;
         }
 
-        return _size / _scaleFactor;
+        return Math.Round(_yieldedSize, decimalPlaces);
     }
     public void ChangeMaxYield(uint newMaxYield)
     {
@@ -137,11 +143,11 @@ public class Magnifier : IMagnifier
             _initialState = false;
         }
     }
-    private void GateCheck(int size)
+    private void GateCheck(double scaleFactor)
     {   // different from PreCheck -> GateCheck invoked before private data initializations
-        if (size < 0)
+        if (scaleFactor < 0)
         {
-            throw new Exception("size or scaleFactor must be nonnegative");
+            throw new Exception("scaleFactor must be nonnegative!");
         }
     }
 
