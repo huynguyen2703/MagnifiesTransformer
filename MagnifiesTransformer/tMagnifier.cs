@@ -9,12 +9,12 @@ public class TMagnifier : Magnifier
 
     public uint TMagnifierGetHighData => _transformer.GetHighData;
     public uint TMagnifierGetLowData => _transformer.GetLowData;
-    public bool IsTargetKnown => _transformer.IsTargetKnown;
+    public bool TMagnifierIsTargetKnown => _transformer.IsTargetKnown;
     public bool TMagnifierSum => _transformer.IsSum;
     public bool TMagnifierDifference => _transformer.IsDifference;
     public bool TMagnifierProduct => _transformer.IsProduct;
     public bool TMagnifierModulo => _transformer.IsModulo;
-    public bool TMagnifierUnknown => _transformer.IsUnknown;
+    public bool TMagnifierUnknownOperation => _transformer.IsUnknown;
     public Transformer.OperationType TMagnifierOperationType => _transformer.GetOperationType;
     
     
@@ -80,12 +80,9 @@ public class TMagnifier : Magnifier
 
         return _transformer.GetModuloFactor();
     }
-    public Type GetTransformerPower()
+    public Transformer GetTransformerType()
     {
-        return _transformer.GetType();
+        return _transformer;
     }
     
 }
-
-// TODO : WATCH NEW VIDEO FOR MONDAY
-// TODO : STUDY TURING MACHINE

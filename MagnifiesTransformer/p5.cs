@@ -630,15 +630,15 @@ class P5
         Console.WriteLine($"Number of high guesses is : {tmagnifier.TMagnifierGetHighData}");
         Console.WriteLine($"Number of low guesses is : {tmagnifier.TMagnifierGetLowData}");
         Console.WriteLine($"Object in initial state : {tmagnifier.GetInitialState}");
-        Console.WriteLine($"Target value is known : {tmagnifier.IsTargetKnown}");
+        Console.WriteLine($"Target value is known : {tmagnifier.TMagnifierIsTargetKnown}");
         Console.WriteLine($"Object current state is : {tmagnifier.GetState}");
         Console.WriteLine($"Object's operation in last operation is : {tmagnifier.TMagnifierOperationType}");
 
-        if (tmagnifier.GetTransformerPower() == typeof(AccelerateTransformer))
+        if (tmagnifier.GetTransformerType().GetType() == typeof(AccelerateTransformer))
         {
             Console.WriteLine($"Accelerating factor of this object is {tmagnifier.GetAcceleratingFactor()}");
         }
-        else if (tmagnifier.GetTransformerPower() == typeof(ViralTransformer))
+        else if (tmagnifier.GetTransformerType().GetType() == typeof(ViralTransformer))
         {
             Console.WriteLine($"Modulo factor of this object is {tmagnifier.GetModuloFactor()}");
         }
@@ -686,8 +686,6 @@ class P5
                     }
 
                     break;
-
-
                 case AccelerateTransformerId:
                     int accelerator = randNum.Next(AccelerateMinLimit, AccelerateMaxLimit);
                     tmagnifiers[i] = new TMagnifier(size, scaleFactor, limit, maxYield,

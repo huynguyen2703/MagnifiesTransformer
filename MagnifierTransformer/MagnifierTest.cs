@@ -292,7 +292,7 @@ public class MagnifierTest
 
             Assert.That(magnifier.MaxYield, Is.EqualTo(10));
         }
-        
+        //
         [Test]
         public void TestFailChangeMaxYield()
         {
@@ -411,5 +411,4 @@ public class MagnifierTest
             });
         }
     }
-    
 }
