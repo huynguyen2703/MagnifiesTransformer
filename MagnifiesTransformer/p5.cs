@@ -5,7 +5,7 @@ class P5
     //-------------------------------------------------CONSTANTS INITIALIZATION ZONE------------------------------------
     private const int NumObjects = 5;
     private const int MinLimit = -10;
-    private const int MaxLimit = 50;  // small max limit because some numbers gonna be large
+    private const int MaxLimit = 50; // small max limit because some numbers gonna be large
     private const int TransformerId = 0;
     private const int AccelerateTransformerId = 1;
     private const int ViralTransformerId = 2;
@@ -564,6 +564,21 @@ class P5
     }
 
     //------------------------------------------TESTING METHODS FOR TMAGNIFIERS-----------------------------------------
+    static void AttemptYieldSize(TMagnifier tmagnifier)
+    {
+        // same code structure but use TMagnifierYieldSize() to resolve overlapping
+        // states between two parents
+        try
+        {
+            double returnSize = tmagnifier.TMagnifierYieldSize();
+            Console.WriteLine($"New size yielded is : {returnSize}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+    }
+
     static void AttemptTransform(TMagnifier tmagnifier, int guessValue)
     {
         try
