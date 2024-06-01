@@ -1,5 +1,5 @@
 ﻿// Huy Quoc Nguyen
-// CPSC 3200 P3 : Transformers
+// CPSC 3200 P5 : Magnifier Transformer
 /*
  *
  * -----------------------------------------CLASS INVARIANT AND INTERFACE INVARIANT-----------------------------------------
@@ -78,7 +78,7 @@
  *  IsModulo : check if an operation used in the last call to Transform() is division (more specific than GeOperationType).
  *  IsSum : check if an operation used in the last call to Transform() is addition (more specific than GeOperationType).
  *  IsDifference : check if an operation used in the last call to Transform() is subtraction (more specific than GeOperationType).
-*/
+ */
 
 namespace MagnifiesTransformer;
 
@@ -244,6 +244,8 @@ public class Transformer
     }
 
     
+    /// PRECONDITIONS : an object must not be a TMagnifier <para></para>
+    /// POSTCONDITIONS : object will be in shut down mode.
     public void ShutDown()
     {
         if (GetType() != typeof(TMagnifier))
@@ -251,7 +253,6 @@ public class Transformer
             CurrentState = State.ShutDown;
         }
     }
-    
     
     /// PRECONDITIONS : An object must not be in shut down mode or inactive mode. <para></para>
     /// POSTCONDITIONS : No exception is thrown
@@ -319,11 +320,11 @@ public class Transformer
 
 /*
  * -----------------------------------------IMPLEMENTATION INVARIANT----------------------------------------------------
- * A Transformer's states depend on the protected/ private variables :
+ * A Transformer's states depends on the protected/private variables :
  * - _targetValue : an encapsulated integer injected via constructor.
  * - _threshold : a boundary used to determine operation used in each call to Transform().
  * - Operation : a variable which represents the operations used in Transformer class. Sum and Difference or Unknown,
- * Product and Modulo used to support children.
+ * - Product and Modulo used to support children.
  *
  * These values depend on each other and one may cause the other to change and hence, will change the entire state of
  * the object. Whether object is in active mode, inactive mode, or shut down will be based on these variables.
@@ -419,4 +420,8 @@ public class Transformer
  * - this method is used to encapsulate some small blocks of code that can be reused within other Transform() methods
  * of child's classes. TaskHelper may change object's state as well because encapsulated part may change object's
  * to Shut Down and because TaskHelper is called within Transform(), it makes Transform() affect object's states more.
+ *
+ * ShutDown()
+ * - this method is a helper method to support child object TMagnifier in the situation where Transformer needs to shut
+ * itself down because that TMagnifier is shut down.
  */

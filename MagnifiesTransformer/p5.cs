@@ -1,3 +1,120 @@
+// Huy Quoc Nguyen
+// CPSC 3200 P5 : Magnifier Transformer
+/*
+ * -----------------------------------------STRUCTURE AND PURPOSES------------------------------------------------------
+ * Driver is designed to test out functionalities of TMagnifier and Magnifier objects (new objects)
+ * from application programmer perspective. In this driver, we use heterogeneous collection to hold different types of
+ * data (objects), providing flexibility and convenience in managing data. Each tested functionality is wrapped inside
+ * a public method separately to have each of them focus on specific tasks (aim to improve cohesion).
+ *
+ * Driver provides public methods that can test Magnifier and TMagnifier objects behaviors together.
+ *
+ *
+ * Execute(Magnifier[] magnifiers)
+ * - wraps the testing logic of the entire driver, this method acts like a smaller main(), it utilizes all other methods
+ * defined in the driver and all testing information, expected results and testing results are included and the
+ * structure of the testing will be taken care by this method.
+ *
+ *
+ * AttemptReset(Magnifier magnifier)
+ * - wraps logic to test Reset() method inside, this method follows the style and purposes of other testing methods,
+ * the purpose of encapsulating logic and take in a Transformer object one per call is to provide potential extension
+ * and reduce code complexity in this driver (ex : more printing format or information regarding object's states after
+ * reset can be potentially be extended inside AttemptReset())
+ *
+ *
+ * AttemptActivate(Magnifier magnifier)
+ * - used to handle the testing of activation functionality of an object passed into the method. This method can
+ * handle any situation encountered when attempting to deactivate an object including exception thrown, an appropriate
+ * message will be printed into the console. This method encapsulates testing activation process, providing code reuse and
+ * aim to improve cohesion.
+ *
+ *
+ * AttemptDeactivate(Magnifier magnifier)
+ * - used to handle the testing of deactivation functionality of an object passed into the method. This method can handle
+ * any situation encountered when attempting to deactivate an object including exception thrown, an appropriate message
+ * will be printed into the console. This method encapsulates testing deactivation process, providing code reuse and
+ * aim to improve cohesion.
+ *
+ *
+ * GetStats(Magnifier magnifier)
+ * - is used to gather and display statistics whenever we want to test the changes of multiple data during the lifetime
+ * of an object. This method serves as a statistics reporter, providing code reuse for multiple parts in this driver.
+ * This method will give out appropriate statistics based on the type of Transformer object passed as into the method.
+ * This is because there are some additional information in children.
+ *
+ *
+ * CreateMagnifiers(int num)
+ * - is used to create a heterogeneous collection of different Magnifier objects to support
+ * testing. A target integer is provided with the use of random number generator to widely test different guesses and
+ * trigger multiple states of the objects in the collection. The number of objects is limited up to an argument passed
+ * into the method. This method will create both TMagnifiers and Magnifiers but the purpose is just to test Magnifier
+ * abilities.
+ *
+ *
+ *
+ * 
+ * Execute(TMagnifier[] tmagnifiers)
+ * - wraps the testing logic of the entire driver, this method acts like a smaller main(), it utilizes all other methods
+ * defined in the driver and all testing information, expected results and testing results are included and the
+ * structure of the testing will be taken care by this method.
+ *
+ * 
+ * AttemptTransform(TMagnifier tmagnifier, int guessValue)
+ * - wraps logic to test TMagnifierTransform() method inside using TMagnifier, this method is used to handle different situations
+ * and different calls from different Transformer objects(parent or child) that lives inside a TMagnifier. In other words
+ * ,we use AttemptTransform() to test all TMagnifierTransform() versions in the same place and at the same time. This
+ * method also handles different kind of exceptions if thrown from any version and it also provides adequate information
+ * regarding return values, errors and  states. This is because a version of Transform affect an object's state the most,
+ * hence handling multiple TMagnifierTransform() versions requires a clear printing format to demonstrate information provided by
+ * different versions. This method needs to take in a TMagnifier object and a guess value to inject into TMagnifierTransform().
+ *
+ * 
+ *
+ * AttemptReset(TMagnifier tmagnifier)
+ * - wraps logic to test TMagnifierReset() method inside, this method follows the style and purposes of other testing methods,
+ * the purpose of encapsulating logic and take in a Magnifier object one per call is to provide potential extension
+ * and reduce code complexity in this driver (ex : more printing format or information regarding object's states after
+ * reset can be potentially be extended inside AttemptReset())
+ *
+ *
+ * AttemptActivate(TMagnifier tmagnifier)
+ * - used to handle the testing of activation functionality of an object passed into the method. This method can
+ * handle any situation encountered when attempting to deactivate an object including exception thrown, an appropriate
+ * message will be printed into the console. This method encapsulates testing activation process, providing code reuse and
+ * aim to improve cohesion.
+ *
+ *
+ * AttemptDeactivate(TMagnifier tmagnifier)
+ * - used to handle the testing of deactivation functionality of an object passed into the method. This method can handle
+ * any situation encountered when attempting to deactivate an object including exception thrown, an appropriate message
+ * will be printed into the console. This method encapsulates testing deactivation process, providing code reuse and
+ * aim to improve cohesion.
+ *
+ *
+ * GetStats(TMagnifier tmagnifier)
+ * - is used to gather and display statistics whenever we want to test the changes of multiple data during the lifetime
+ * of an object. This method serves as a statistics reporter, providing code reuse for multiple parts in this driver.
+ * This method will give out appropriate statistics based on the type of Transformer object passed as into the method.
+ * This is because there are some additional information in children.
+ *
+ *
+ * CreateTMagnifiers(int num)
+ * - is used to create a collection of different TMagnifier objects to support
+ * testing. A target integer is provided with the use of random number generator to widely test different guesses and
+ * trigger multiple states of the objects in the collection. The number of objects is limited up to an argument passed
+ * into the method. This method will create both TMagnifiers and Magnifiers but the purpose is just to test Magnifier
+ * abilities. This collection will be used to test all Transformer abilities with a little Magnifier ability to demonstrate
+ * multiple inheritance.
+ *
+ *
+ * The driver is structured and built up with multiple testing methods, each takes specific responsibility related to
+ * that method. The main provides functional decomposition by separating responsibility. This enhances readability and
+ * code reuse. All objects also placed into a heterogeneous collection for better management when testing.
+ * These design decisions aim to reduce code replication code complexity.
+ *
+ *
+ */
 namespace MagnifiesTransformer;
 
 class P5

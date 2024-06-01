@@ -1,3 +1,10 @@
+// Huy Quoc Nguyen
+// CPSC 3200 P5 : Magnifier Transformer
+
+/*
+ * -----------------------------------------CLASS INVARIANT AND INTERFACE INVARIANT-------------------------------------
+ *                                      (More information please see in magnifier class)
+ */
 namespace MagnifiesTransformer;
 
 public interface IMagnifier
@@ -36,3 +43,8 @@ public interface IMagnifier
 
     public void Deactivate();
 }
+
+/*
+ * -----------------------------------------IMPLEMENTATION INVARIANT----------------------------------------------------
+ *                              (More information please see in magnifier class)
+ */

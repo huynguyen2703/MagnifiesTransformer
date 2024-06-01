@@ -1,5 +1,5 @@
 // Huy Quoc Nguyen
-// CPSC 3200 P3 : Transformers
+// CPSC 3200 P5 : Magnifier Transformer
 /*
  * -----------------------------------------CLASS INVARIANT AND INTERFACE INVARIANT-----------------------------------------
  * ViralTransformer class represents a subtype of Transformer, it is a type of Transformer that also takes a target

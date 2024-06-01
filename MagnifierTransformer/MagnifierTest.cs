@@ -1,3 +1,6 @@
+// Huy Quoc Nguyen
+// CPSC 3200 P5 : Magnifier Transformer
+
 using MagnifiesTransformer;
 
 namespace MagnifierTransformer;
